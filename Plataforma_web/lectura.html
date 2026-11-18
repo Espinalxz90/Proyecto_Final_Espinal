@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDU_IA - Lectura de Tema</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="lectura">
+
+  <div class="container">
+    <!-- Encabezado y menú principal -->
+    <header>
+      <a class="logo" href="index.html">
+        <div class="logo-icon"></div>
+        <span>EDU_IA</span>
+      </a>
+      <nav>
+        <ul id="menuNav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="modulos.html?id=1">Módulos</a></li>
+          <li><a href="autoevaluacion.html?id=1">Autoevaluación</a></li>
+          <li><a href="login_usuario.html">Iniciar Sesión</a></li>
+          <li><a href="login.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Vista de lectura del tema -->
+    <section class="card panel">
+      <div><span class="nota" id="lecModulo" style="color:#4a7bb0;font-weight:bold"></span><h2 id="lecTitulo"></h2></div>
+      <div class="caja lectura" id="lecTexto"></div>
+      <div class="acciones">
+        <a class="btn sec" id="btnVolverModulo" href="modulos.html?id=1">&lt;- Volver al módulo</a>
+        <a class="btn" id="btnSiguiente" href="#">Siguiente Tema -&gt;</a>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+      EDU_IA — Plataforma Web de Educación y Uso Responsable de Inteligencia Artificial
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

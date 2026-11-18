@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDU_IA - Autoevaluación</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="autoevaluacion">
+
+  <div class="container">
+    <!-- Encabezado y menú principal -->
+    <header>
+      <a class="logo" href="index.html">
+        <div class="logo-icon"></div>
+        <span>EDU_IA</span>
+      </a>
+      <nav>
+        <ul id="menuNav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="modulos.html?id=1">Módulos</a></li>
+          <li><a href="autoevaluacion.html?id=1">Autoevaluación</a></li>
+          <li><a href="login_usuario.html">Iniciar Sesión</a></li>
+          <li><a href="login.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Cuestionario rápido de autoevaluación -->
+    <section class="card panel">
+      <div class="encabezado-panel">
+        <h2 id="quizTitulo"></h2>
+        <div class="botones">
+          <a class="btn sec" href="autoevaluacion.html?id=1">Quiz Mód. 1</a>
+          <a class="btn sec" href="autoevaluacion.html?id=2">Quiz Mód. 2</a>
+          <a class="btn sec" href="autoevaluacion.html?id=3">Quiz Mód. 3</a>
+        </div>
+      </div>
+      <div id="preguntas"></div>
+      <div class="acciones">
+        <a class="btn sec" href="index.html">&lt;- Volver a Inicio</a>
+        <button class="btn" onclick="calificar()">Calificar Autoevaluación</button>
+      </div>
+      <div class="banner" id="resultadoQuiz"></div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+      EDU_IA — Plataforma Web de Educación y Uso Responsable de Inteligencia Artificial
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

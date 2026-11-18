@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDU_IA - Panel de Administración</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="admin">
+
+  <div class="container">
+    <!-- Encabezado y menú principal -->
+    <header>
+      <a class="logo" href="index.html">
+        <div class="logo-icon"></div>
+        <span>EDU_IA</span>
+      </a>
+      <nav>
+        <ul id="menuNav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="modulos.html?id=1">Módulos</a></li>
+          <li><a href="autoevaluacion.html?id=1">Autoevaluación</a></li>
+          <li><a href="login_usuario.html">Iniciar Sesión</a></li>
+          <li><a href="login.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Panel de gestión de contenidos -->
+    <section class="card panel">
+      <div class="encabezado-panel">
+        <div><h2>Gestión de Contenidos</h2><p class="desc">Agrega, edita o elimina temas de los módulos de EDU_IA.</p></div>
+        <button class="btn sec" onclick="cerrarSesionAdmin()">Cerrar Sesión</button>
+      </div>
+      <form class="formulario caja" onsubmit="guardarTema(event)">
+        <input type="hidden" id="idEditar">
+        <label for="selModulo">Seleccionar Módulo:</label>
+        <select id="selModulo"></select>
+        <label for="titTema">Título del Tema:</label>
+        <input type="text" id="titTema" placeholder="Ej. Transparencia en contenidos generados" required>
+        <label for="conTema">Contenido del Tema:</label>
+        <textarea id="conTema" rows="4" placeholder="Escribe aquí la explicación, norma o consejo práctico..." required></textarea>
+        <div class="botones">
+          <button type="submit" class="btn" id="btnGuardar">Guardar Tema</button>
+          <button type="button" class="btn sec" onclick="limpiarForm()">Limpiar</button>
+        </div>
+      </form>
+      <h3 style="color:#1e3a8a;font-size:1rem">Temas Registrados Actualmente</h3>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>Módulo</th><th>Título del Tema</th><th>Acciones</th></tr></thead>
+          <tbody id="tablaTemas"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+      EDU_IA — Plataforma Web de Educación y Uso Responsable de Inteligencia Artificial
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

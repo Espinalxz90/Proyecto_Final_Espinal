@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDU_IA - Crear Cuenta</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="registro">
+
+  <div class="container">
+    <!-- Encabezado y menú principal -->
+    <header>
+      <a class="logo" href="index.html">
+        <div class="logo-icon"></div>
+        <span>EDU_IA</span>
+      </a>
+      <nav>
+        <ul id="menuNav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="modulos.html?id=1">Módulos</a></li>
+          <li><a href="autoevaluacion.html?id=1">Autoevaluación</a></li>
+          <li><a href="login_usuario.html">Iniciar Sesión</a></li>
+          <li><a href="login.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Formulario de registro de usuario -->
+    <section class="card panel">
+      <div class="login-box">
+        <h2 style="margin-bottom:6px">Crear Cuenta</h2>
+        <p class="desc" style="margin-bottom:14px">Regístrate gratis para respaldar tus calificaciones y avances.</p>
+        <form class="formulario caja" onsubmit="registrarUsuario(event)">
+          <label for="regNombre">Nombre completo:</label>
+          <input type="text" id="regNombre" placeholder="Ej. Juan Pérez" required>
+          <label for="regCorreo">Correo electrónico:</label>
+          <input type="email" id="regCorreo" placeholder="estudiante@correo.com" required>
+          <label for="regPass">Contraseña:</label>
+          <input type="password" id="regPass" placeholder="Mínimo 4 caracteres" minlength="4" required>
+          <div class="acciones" style="margin-top:4px">
+            <a class="btn sec" href="login_usuario.html">&lt;- Ya tengo cuenta</a>
+            <button type="submit" class="btn">Registrarme</button>
+          </div>
+          <div class="banner error" id="errorRegistro"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+      EDU_IA — Plataforma Web de Educación y Uso Responsable de Inteligencia Artificial
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

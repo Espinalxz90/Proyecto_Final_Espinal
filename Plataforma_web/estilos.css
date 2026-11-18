@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f6f9;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 1. Header y Nav */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #9cb5db;
+  border-radius: 50%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+}
+
+/* 2. Seccion Hero */
+.hero {
+  background-color: #d0e1f9;
+  border-radius: 8px;
+  padding: 40px 30px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-content h1 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  color: #475569;
+}
+
+.hero-image-placeholder {
+  width: 100px;
+  height: 70px;
+  background-color: #4a7bb0;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Simula la montaña/icono */
+}
+
+/* 3. Seccion de 1 fila y 3 columnas */
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #eef2f7;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #a0aec0;
+  border-radius: 50%;
+}
+
+.card-title {
+  font-weight: bold;
+  color: #4a5568;
+}
+
+.card-line {
+  height: 8px;
+  background-color: #cbd5e0;
+  border-radius: 4px;
+  width: 80%;
+}
+
+/* 4. Footer */
+footer {
+  background-color: #e2e8f0;
+  text-align: center;
+  padding: 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #4a5568;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .cards-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+/* ===== ESTILOS EXTRA PARA EL CONTENIDO DE EDU_IA ===== */
+.logo, nav a { cursor: pointer; }
+.logo { text-decoration: none; color: inherit; }
+.panel { margin: 20px 0; gap: 14px; }
+.panel h2 { color: #1e3a8a; }
+.desc { font-size: 0.9rem; color: #4a5568; line-height: 1.4; }
+.encabezado-panel, .acciones { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.botones { display: flex; gap: 8px; flex-wrap: wrap; }
+.buscador { display: flex; gap: 8px; max-width: 480px; margin-top: 16px; }
+.buscador input { flex: 1; min-width: 0; padding: 10px 14px; border: 1px solid #9cb5db; border-radius: 6px; font-size: 0.9rem; }
+.card-pie { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.nota { font-size: 0.8rem; color: #4a5568; }
+.btn { display: inline-block; background-color: #4a7bb0; color: #ffffff; border: none; padding: 9px 15px;
+  border-radius: 6px; font-size: 0.88rem; font-weight: bold; cursor: pointer; text-decoration: none; }
+.btn:hover { background-color: #1e3a8a; }
+.btn.sec { background-color: #d0e1f9; color: #1e3a8a; }
+.btn.sec:hover { background-color: #9cb5db; }
+.btn.rojo { background-color: #e53e3e; padding: 6px 10px; font-size: 0.8rem; }
+.btn.rojo:hover { background-color: #c53030; }
+.caja { background-color: #ffffff; border: 1px solid #d0e1f9; border-radius: 6px; padding: 15px; }
+.fila { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.fila strong, .caja p.pregunta { color: #1e3a8a; }
+.lectura { line-height: 1.6; padding: 25px; }
+.opcion { display: block; margin: 6px 0; font-size: 0.92rem; cursor: pointer; }
+.banner { display: none; padding: 15px; background-color: #d0e1f9; color: #1e3a8a; font-weight: bold; border-radius: 6px; }
+.banner.error { background-color: #fed7d7; color: #9b2c2c; }
+.banner.exito { background-color: #c6f6d5; color: #22543d; }
+.aviso-progreso { margin-top: 10px; padding: 12px 15px; background-color: #ffffff; border: 1px solid #9cb5db; border-radius: 6px; font-size: 0.9rem; color: #1e3a8a; font-weight: normal; }
+.formulario { display: grid; gap: 12px; }
+.formulario label { font-size: 0.85rem; font-weight: bold; color: #1e3a8a; }
+.formulario input, .formulario select, .formulario textarea { width: 100%; padding: 9px; border: 1px solid #cbd5e0;
+  border-radius: 5px; font-size: 0.9rem; }
+.login-box { max-width: 440px; margin: 0 auto; width: 100%; }
+table { width: 100%; border-collapse: collapse; background-color: #ffffff; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 0.88rem; }
+th { background-color: #d0e1f9; color: #1e3a8a; }
+
+@media (max-width: 768px) {
+  header { flex-wrap: wrap; gap: 12px; }
+  nav ul { flex-wrap: wrap; }
+}

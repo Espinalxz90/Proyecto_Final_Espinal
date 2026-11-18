@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDU_IA - Inicio</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="inicio">
+
+  <div class="container">
+    <!-- Encabezado y menú principal -->
+    <header>
+      <a class="logo" href="index.html">
+        <div class="logo-icon"></div>
+        <span>EDU_IA</span>
+      </a>
+      <nav>
+        <ul id="menuNav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="modulos.html?id=1">Módulos</a></li>
+          <li><a href="autoevaluacion.html?id=1">Autoevaluación</a></li>
+          <li><a href="login_usuario.html">Iniciar Sesión</a></li>
+          <li><a href="login.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Sección principal y buscador -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Educación y Uso Responsable de IA</h1>
+        <p>Plataforma web de autoaprendizaje con consejos, normativas y pautas éticas sobre la Inteligencia Artificial Generativa.</p>
+        <div class="buscador">
+          <input type="text" id="busqueda" placeholder="Buscar palabra clave (ej. derechos de autor, privacidad, prompts)..." onkeyup="buscar()">
+          <button class="btn" onclick="buscar()">Buscar</button>
+        </div>
+      </div>
+      <div class="hero-image-placeholder"></div>
+    </section>
+
+    <section class="card panel" id="resultados" style="display:none">
+      <h2>Resultados de búsqueda</h2>
+      <div id="listaResultados"></div>
+    </section>
+
+    <!-- Tarjetas de los 3 módulos -->
+    <section class="cards-section" id="tarjetas"></section>
+
+    <!-- Pie de página -->
+    <footer>
+      EDU_IA — Plataforma Web de Educación y Uso Responsable de Inteligencia Artificial
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

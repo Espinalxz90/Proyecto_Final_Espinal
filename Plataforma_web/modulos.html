@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDU_IA - Módulos</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body data-pagina="modulos">
+
+  <div class="container">
+    <!-- Encabezado y menú principal -->
+    <header>
+      <a class="logo" href="index.html">
+        <div class="logo-icon"></div>
+        <span>EDU_IA</span>
+      </a>
+      <nav>
+        <ul id="menuNav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="modulos.html?id=1">Módulos</a></li>
+          <li><a href="autoevaluacion.html?id=1">Autoevaluación</a></li>
+          <li><a href="login_usuario.html">Iniciar Sesión</a></li>
+          <li><a href="login.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Lista de temas del módulo seleccionado -->
+    <section class="card panel">
+      <div class="encabezado-panel">
+        <div><h2 id="modTitulo"></h2><p class="desc" id="modDesc"></p></div>
+        <div class="botones">
+          <a class="btn sec" href="modulos.html?id=1">Mód. 1</a>
+          <a class="btn sec" href="modulos.html?id=2">Mód. 2</a>
+          <a class="btn sec" href="modulos.html?id=3">Mód. 3</a>
+        </div>
+      </div>
+      <div id="listaTemas"></div>
+      <div class="acciones">
+        <a class="btn sec" href="index.html">&lt;- Volver a Inicio</a>
+        <a class="btn" id="btnQuizModulo" href="autoevaluacion.html?id=1">Realizar Autoevaluación del Módulo</a>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+      EDU_IA — Plataforma Web de Educación y Uso Responsable de Inteligencia Artificial
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

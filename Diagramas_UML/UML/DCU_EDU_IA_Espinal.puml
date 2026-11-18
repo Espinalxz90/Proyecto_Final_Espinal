@@ -1,0 +1,29 @@
+@startuml
+left to right direction
+
+actor "Usuario" as User
+actor "Administrador" as Admin
+
+rectangle "Plataforma Web EDU_IA" {
+  usecase "Explorar Módulos" as UC1
+  usecase "Leer Temas libremente" as UC2
+  usecase "Buscar por palabras clave" as UC3
+  usecase "Realizar Autoevaluación" as UC4
+  usecase "Respaldar Progreso\n(Si inició sesión)" as UC7
+  usecase "Registrarse e Iniciar Sesión" as UC8
+  
+  usecase "Gestionar Contenidos\n(Agregar, Editar, Eliminar)" as UC5
+  usecase "Iniciar Sesión\n(Correo y Contraseña)" as UC6
+}
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC8
+
+UC4 <.. UC7 : <<extend>>
+
+Admin --> UC5
+UC5 ..> UC6 : <<include>>
+@enduml

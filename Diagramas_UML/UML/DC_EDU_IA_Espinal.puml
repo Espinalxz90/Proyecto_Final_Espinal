@@ -1,0 +1,76 @@
+@startuml
+
+class Modulo {
+    -idModulo: int
+    -titulo: string
+    -descripcion: string
+    -orden: int
+    --
+    +mostrarModulos()
+}
+
+class Tema {
+    -idTema: int 
+    -titulo: string
+    -contenido: string
+    -fechaActualizacion: datetime
+    --
+    mostrarContenido()
+}
+
+class Pregunta {
+    idPregunta: int
+    -enunciado: string
+    -opcionA: string
+    -opcionB: string
+    -opcionC: string
+    -respuestaCorrecta: char
+    --
+    +validarRespuesta()
+}
+
+class Usuario {
+    -idUsuario: int
+    -nombre: string
+    -correo: string
+    -password: string
+    --
+    +registrarse()
+    +iniciarSesion()
+    +explorarModulos()
+    +buscarTema()
+    +leerTema()
+    +realizarAutoevaluacion()
+    +guardarProgreso()
+}
+
+class Progreso {
+    -idProgreso: int
+    -calificacion: float
+    -fechaRegistro: datetime
+    --
+    +registrarAvance()
+}
+
+class Administrador {
+    -idAdmin: int
+    -nombre: string
+    -correo: string
+    -password: string
+    --
+    +iniciarSesion()
+    +agregarTema()
+    +editarTema()
+    +eliminarTema()
+}
+
+Modulo "1" --> "n" Tema : contiene
+Modulo "1" --> "n" Pregunta : evalua
+Modulo "1" --> "n" Progreso : registra
+Usuario "1" --> "n" Progreso : respalda
+Usuario ..> Modulo : consulta
+Usuario ..> Tema : lee
+Usuario ..> Pregunta : responde
+Administrador "1" --> "n" Tema : gestiona
+
+@enduml

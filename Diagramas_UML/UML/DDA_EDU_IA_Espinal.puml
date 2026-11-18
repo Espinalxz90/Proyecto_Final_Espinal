@@ -1,0 +1,45 @@
+@startuml
+start
+
+:Ingresar a la plataforma web EDU_IA;
+
+if (¿Qué rol deseas utilizar?) then (Usuario)
+  :Visualizar los 3 Módulos principales;
+
+  if (¿Desea buscar un tema específico?) then (Si)
+    :Ingresar palabra clave en el buscador;
+    :Seleccionar tema de los resultados;
+  else (No)
+    :Seleccionar un Módulo;
+    :Elegir un Tema de la lista;
+  endif
+
+  :Leer el contenido del Tema libremente;
+
+  if (¿Desea realizar la autoevaluación?) then (Sí)
+    :Responder preguntas rápidas del módulo;
+    :Visualizar puntaje obtenido al instante;
+
+    if (¿Tiene sesión iniciada?) then (Sí)
+      :Mostrar aviso "Progreso guardado" en la Base de Datos;
+    else (No)
+      :Mostrar invitación para iniciar sesión o crear cuenta;
+    endif
+  else (No)
+  endif
+
+else (Administrador)
+  :Ingresar al acceso de Administrador;
+  :Ingresar correo y contraseña;
+
+  if (¿Credenciales válidas?) then (Sí)
+    :Acceder al Panel de Administración;
+    :Agregar, editar o eliminar Módulos, Temas o Preguntas;
+    :Guardar cambios en la Base de Datos;
+  else (No)
+    :Mostrar mensaje de error de acceso;
+  endif
+endif
+
+stop
+@enduml

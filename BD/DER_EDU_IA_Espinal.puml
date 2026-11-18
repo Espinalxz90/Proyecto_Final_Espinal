@@ -1,0 +1,62 @@
+@startuml
+
+entity "ADMINISTRADORES" as admin{
+    * id_admin : INT <<PK>>
+    --
+    *nombre : VARCHAR(100)
+    *correo : VARCHAR(50)
+    *password : VARCHAR(250)
+}
+
+entity "MODULOS" as modulo{
+    * id_modulo : INT <<PK>>
+    --
+    *id_admin : INT <<FK>>
+    *titulo : VARCHAR (150)
+    *descripcion : TEXT
+    *orden : INT
+}
+
+entity "TEMAS" as tema{
+    *id_tema : INT <<PK>>
+    --
+    *id_modulo : INT <<FK>>
+    *titulo : VARCHAR (150)
+    *contenido : TEXT 
+    *fecha_actualizacion : DATETIME
+}
+
+entity "PREGUNTAS" as pregunta {
+    *id_pregunta : INT <<PK>>
+    *id_modulo : INT <<FK>>
+    *enunciado : TEXT
+    *opcion_a : VARCHAR (250)
+    *opcion_b : VARCHAR (250)
+    *opcion_c : VARCHAR (250)
+    *respuesta_correcta : CHAR (1)
+}
+
+entity "USUARIOS" as usuario {
+    *id_usuario : INT <<PK>>
+    --
+    *nombre : VARCHAR(100)
+    *correo : VARCHAR(100)
+    *password : VARCHAR(250)
+}
+
+entity "PROGRESO" as progreso {
+    *id_progreso : INT <<PK>>
+    --
+    *id_usuario : INT <<FK>>
+    *id_modulo : INT <<FK>>
+    *calificacion : VARCHAR(20)
+    *fecha_registro : DATETIME
+}
+
+admin ||--o{ modulo : gestiona
+modulo ||--o{ tema : contiene
+modulo ||--o{ pregunta : evalua
+usuario ||--o{ progreso : respalda
+modulo ||--o{ progreso : registra
+
+@enduml
